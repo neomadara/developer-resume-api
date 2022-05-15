@@ -2,18 +2,26 @@
   "name": "developer-resume-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
-    "start": "vercel dev",
-    "deploy" : "vercel deploy --prod"
+    "start:vercel": "vercel dev",
+    "start": "node dist/index.js",
+    "deploy": "vercel deploy --prod",
+    "dev": "nodemon server.ts",
+    "build": "npx tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/express": "^4.17.13",
     "express": "^4.18.1",
-    "typescript": "^4.6.4",
     "vercel": "^24.2.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.33",
+    "concurrently": "^7.2.0",
+    "nodemon": "^2.0.16",
+    "typescript": "^4.6.4"
   }
 }
