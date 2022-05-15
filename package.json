@@ -2,12 +2,12 @@
   "name": "developer-resume-api",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "index.ts",
   "scripts": {
     "start:vercel": "vercel dev",
     "start": "node dist/index.js",
     "deploy": "vercel deploy --prod",
-    "dev": "nodemon server.ts",
+    "dev": "nodemon index.ts",
     "build": "npx tsc"
   },
   "keywords": [],
