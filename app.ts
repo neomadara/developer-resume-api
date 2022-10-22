@@ -1,16 +1,8 @@
-import express, {Express, Request, Response} from "express";
-import Logger from "./src/utils/logger";
+import express, {Express} from "express";
+import healthRoute from './src/health/controller'
 
 const app: Express = express()
 
-app.get('/healthz', (req: Request, res: Response) => {
-  Logger.info('health check service')
-  const healthCheck = {
-    uptime: process.uptime(),
-    message: 'Ok',
-    timestamp: Date.now()
-  }
-  res.send(healthCheck).status(200)
-})
+app.use(healthRoute);
 
 export default app
