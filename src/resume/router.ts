@@ -1,13 +1,13 @@
 import express from "express";
 import getResumeByEmail from './controller'
 import validateSchema from "../utils/validateSchema";
-import GetResumeByEmailAdapter from "./getResumeByEmail.adapter";
+import EmailAdapter from "./adapters/email.adapter";
 
 const router = express.Router()
 
 router.get(
   "/resume/:email",
-  validateSchema(GetResumeByEmailAdapter),
+  validateSchema(EmailAdapter),
   getResumeByEmail
 )
 
