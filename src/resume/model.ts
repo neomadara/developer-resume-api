@@ -21,7 +21,7 @@ const resumeSchema = new mongoose.Schema({
       company: String,
       date: String,
       description: String,
-      stacks: [{type: String}]
+      stacks: [{type: {name :String}}]
     }
   }],
   educations: [{
