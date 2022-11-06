@@ -14,11 +14,11 @@ app.use(express.json());
 dotenv.config()
 
 const port = process.env.PORT || 3000
-const MONGODB = process.env.MONGODB || ''
+const MONGODB_URI = process.env.MONGODB_URI || ''
 
 const startServer = async () => {
   try {
-    await mongoose.connect(MONGODB);
+    await mongoose.connect(MONGODB_URI);
     app.listen(port, () => Logger.info(`Server started on port ${port}`));
   } catch (error) {
     Logger.error(`Error: ${error}`)
