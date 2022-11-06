@@ -12,7 +12,7 @@ const resumeSchema = new mongoose.Schema({
   technologies: [{
     type: {
       subtitle: String,
-      techs: [{type: String}]
+      techs: [{type: {name :String}}]
     }
   }],
   jobs: [{
