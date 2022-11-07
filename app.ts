@@ -7,17 +7,15 @@ import * as dotenv from 'dotenv'
 import cors from "cors"
 
 const app: Express = express()
-
-app.use(healthRoute);
-app.use(resumeRoute)
-
-app.use(express.json());
-app.use(cors());
+const port = process.env.PORT || 3000
+const MONGODB_URI = process.env.MONGODB_URI || ''
 
 dotenv.config()
 
-const port = process.env.PORT || 3000
-const MONGODB_URI = process.env.MONGODB_URI || ''
+app.use(express.json());
+app.use(cors());
+app.use(healthRoute);
+app.use(resumeRoute)
 
 const startServer = async () => {
   try {
