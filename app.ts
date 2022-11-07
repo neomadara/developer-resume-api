@@ -4,12 +4,15 @@ import resumeRoute from './src/resume/router'
 import * as mongoose from "mongoose";
 import Logger from "./src/utils/logger";
 import * as dotenv from 'dotenv'
+import cors from "cors"
 
 const app: Express = express()
 
 app.use(healthRoute);
 app.use(resumeRoute)
+
 app.use(express.json());
+app.use(cors({origin: '*'}));
 
 dotenv.config()
 
