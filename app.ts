@@ -12,7 +12,7 @@ app.use(healthRoute);
 app.use(resumeRoute)
 
 app.use(express.json());
-app.use(cors({origin: '*'}));
+app.use(cors());
 
 dotenv.config()
 
