@@ -9,7 +9,7 @@
     "deploy": "vercel deploy --prod",
     "dev": "nodemon index.ts",
     "build": "npx tsc",
-    "test": "jest --coverage"
+    "test": "NODE_ENV=test jest --coverage"
   },
   "keywords": [],
   "author": "",

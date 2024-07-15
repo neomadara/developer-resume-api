@@ -2,6 +2,7 @@ import request from "supertest";
 import app from "../../../app";
 import * as Repository from "../../../src/resume/repository";
 
+
 afterEach(() => {
   jest.resetAllMocks();
 });
@@ -81,5 +82,16 @@ describe('Resume Module', () => {
     expect(res.status).toEqual(200)
     expect(res.body).toEqual(resumeMock)
   })
+  it('Should return a not found message when the resume dont exists', async () => {
+    const resumeMock = null
 
+    const spyRepository = jest
+      .spyOn(Repository, "findByEmail")
+      .mockResolvedValue(resumeMock)
+
+    const res = await request(app).get("/resume/nicolegeek@gmail.com")
+    expect(spyRepository).toHaveBeenCalled()
+    expect(res.status).toEqual(404)
+    expect(res.body).toEqual(resumeMock)
+  })
 })
